@@ -11,3 +11,5 @@ Second, create a function, claptime, to determine if the factor 'i' has 3 or 6 o
 If number_count is zero, output the number i, otherwise output the number_count as many 'clap!'
 
 ![image](https://user-images.githubusercontent.com/79324847/109373366-a4aa2e80-78f1-11eb-87de-242cca8dff57.png)
+
+...loading...
