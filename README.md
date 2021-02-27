@@ -14,8 +14,8 @@ If number_count is zero, output the number i, otherwise output the number_count 
 
 Finally, put the numbers from 1 to 'number' in the factor 'i'.
 
-![image](https://user-images.githubusercontent.com/79324847/109376423-b3034500-7907-11eb-8509-4d2e00130934.png)
+![image](https://user-images.githubusercontent.com/79324847/109376461-f067d280-7907-11eb-855e-4b3509a08c42.png)
 
 ### Execution Result
 
-![image](https://user-images.githubusercontent.com/79324847/109376365-4d16bd80-7907-11eb-87a2-655433b56d1c.png)
+![image](https://user-images.githubusercontent.com/79324847/109376449-da5a1200-7907-11eb-81b9-e57d8a5c6c3a.png)
