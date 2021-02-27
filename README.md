@@ -8,3 +8,5 @@ First, write a code to input the last number of 369 games. And I print '369 369,
 
 Second, create a function, claptime, to determine if the factor 'i' has 3 or 6 or 9 and add 1 to the 'number_count' initialized to 0. 
 If number_count is zero, output the number i, otherwise output the number_count as many 'clap!'
+
+![image](https://user-images.githubusercontent.com/79324847/109373366-a4aa2e80-78f1-11eb-87de-242cca8dff57.png)
