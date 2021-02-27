@@ -1,8 +1,6 @@
 ## 369game
 It is a code that plays 369 games, a popular mini game in Korea.
 
-- rule
-
 The way to play this game is that several people take turns to say the number from 1, and if the number contains 3, 6, or 9, clap as much as the number.
 
 ---
