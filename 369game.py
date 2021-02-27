@@ -1,4 +1,3 @@
-import random
 number = input('Please input an end number:')
 print('369 369, 369 369 !!')
 
