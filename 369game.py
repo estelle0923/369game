@@ -10,7 +10,7 @@ def claptime(i):
     if number_count == 0:
         print(i)
     else:
-        print('짝!' * number_count)
+        print('clap!' * number_count)
         
 
 for j in range(1, int(number)+1):
