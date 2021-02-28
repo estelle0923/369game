@@ -21,3 +21,7 @@ Finally, put the numbers from 1 to 'number' in the factor 'i'.
 ### Execution Result
 
 ![image](https://user-images.githubusercontent.com/79324847/109376449-da5a1200-7907-11eb-81b9-e57d8a5c6c3a.png)
+
+---
+
+Thank you for watching my '369 game' code.
