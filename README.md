@@ -7,7 +7,7 @@ The way to play this game is that several people take turns to say the number fr
 ### Code Description & process
 First, write a code to input the last number of 369 game in 'number'. And I print '369 369, 369 369', the first start of the 369 game.
 ``` python
-number = input('끝자리를 입력해주세요:')
+number = input('Please input an end number:')
 print('369 369, 369 369 !!')
 ```
 Second, create a function, 'claptime', to determine if the factor ' i '  has 3 or 6 or 9 and add 1 to the 'number_count' initialized to 0. 
