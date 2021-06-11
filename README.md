@@ -7,8 +7,16 @@ The way to play this game is that several people take turns to say the number fr
 ### Code Description & process
 First, write a code to input the last number of 369 game in 'number'. And I print '369 369, 369 369', the first start of the 369 game.
 ``` python
-number = input('Please input an end number:')
-print('369 369, 369 369 !!')
+continent = ['AS', 'EU', 'AF', 'NA', 'SA', 'OC']
+continent_alcohol = {'AS': 0, 'EU': 0, 'AF': 0, 'NA': 0, 'SA': 0, 'OC': 0}
+for i in range(1, len(drinks_data)):
+    continent_alcohol[drinks_data[i][5]] += float(drinks_data[i][4])
+plt.bar(continent, continent_alcohol.values(), label='total litres')
+plt.xlabel("Continent", fontsize=20)
+plt.ylabel("Total Litres of Pure Alcohol", fontsize=20)
+plt.title('Total Litres of Alcohol on Six Continents', fontsize=24)
+plt.legend()
+plt.show()
 ```
 Second, create a function, 'claptime', to determine if the factor ' i '  has 3 or 6 or 9 and add 1 to the 'number_count' initialized to 0. 
 If number_count is zero, output the number i, otherwise output the number_count as many 'clap!'
