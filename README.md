@@ -14,16 +14,17 @@ for i in range(1, len(drinks_data)):
         country[drinks_data[i][0]] += float(drinks_data[i][4])
 
 ax1 = plt.subplot(121)
-ax1.bar(['Russia', 'Canada', 'Mongolia'], [country['Russian Federation'], country['Canada'], country['Mongolia']],
-        color=['darkblue', 'royalblue', 'cornflowerblue'], alpha=0.5, label='total litres')
+ax1.bar(['Russia', 'Canada', 'Mongolia'], [country['Russian Federation'],
+        country['Canada'], country['Mongolia']], color=['darkblue', 'royalblue', 'cornflowerblue'],
+        alpha=0.5, label='total litres')
 plt.xlabel('Country',  fontsize=20)
 plt.ylabel('Total Alcohol', fontsize=20)
 plt.title('Total of Pure Alcohol in Cold Country',  fontsize=24)
 plt.legend()
 
 ax2 = plt.subplot(122)
-ax2.bar(['Libya', 'Saudi Arabia', 'Iraq'], [country['Libya'], country['Saudi Arabia'], country['Iraq']],
-        color='red', alpha=0.5, label='total litres')
+ax2.bar(['Libya', 'Saudi Arabia', 'Iraq'], [country['Libya'], country['Saudi Arabia'],
+        country['Iraq']], color='red', alpha=0.5, label='total litres')
 plt.xlabel('Country',  fontsize=20)
 plt.ylabel('Total Alcohol', fontsize=20)
 plt.ylim(0, 12)
