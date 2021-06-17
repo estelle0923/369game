@@ -7,7 +7,7 @@ The way to play this game is that several people take turns to say the number fr
 ### Code Description & process
 First, write a code to input the last number of 369 game in 'number'. And I print '369 369, 369 369', the first start of the 369 game.
 ``` python
-cancer_country = {'average': 0, 'Hungary': 0, 'South Korea': 0, 'Slovakia': 0}
+cancer_country = {'average': 0, 'Slovakia': 0, 'South Korea': 0, 'Hungary': 0}
 colors = ['darkorange', 'darkviolet', 'darkviolet', 'darkviolet']
 for i in range(1, len(drinks_data)):
     if drinks_data[i][0] in cancer_country:
@@ -17,13 +17,12 @@ for i in range(1, len(drinks_data)):
     count += float(drinks_data[i][1])
 average = count/len(drinks_data)
 cancer_country['average'] = average
-plt.bar(['average', 'Hungary', 'South Korea', 'Slovakia'],
-        [cancer_country['average'], cancer_country['Hungary'],
-         cancer_country['South Korea'], cancer_country['Slovakia']],
+plt.bar(['average', 'Slovakia', 'South Korea', 'Hungary'],
+        [cancer_country['average'], cancer_country['Slovakia'],
+         cancer_country['South Korea'], cancer_country['Hungary']],
         color=colors, label='beer')
 plt.ylabel("Beer Servings [L]", fontsize=20)
-plt.title(
-    'Beer Servings in Countries with High Incidence of Colorectal Cancer', fontsize=24)
+plt.title('Beer Servings in Countries with High Incidence of Colorectal Cancer', fontsize=24)
 plt.legend()
 plt.show()
 ```
