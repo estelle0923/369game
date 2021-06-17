@@ -7,28 +7,20 @@ The way to play this game is that several people take turns to say the number fr
 ### Code Description & process
 First, write a code to input the last number of 369 game in 'number'. And I print '369 369, 369 369', the first start of the 369 game.
 ``` python
-country = {'Russian Federation': 0, 'Canada': 0,
-           'Mongolia': 0, 'Libya': 0, 'Saudi Arabia': 0, 'Iraq': 0}
-for i in range(1, len(drinks_data)):
-    if drinks_data[i][0] in country:
-        country[drinks_data[i][0]] += float(drinks_data[i][4])
-
-ax1 = plt.subplot(121)
-ax1.bar(['Russia', 'Canada', 'Mongolia'], [country['Russian Federation'],
-        country['Canada'], country['Mongolia']], color=['darkblue', 'royalblue', 'cornflowerblue'],
-        alpha=0.5, label='total litres')
-plt.xlabel('Country',  fontsize=20)
-plt.ylabel('Total Alcohol', fontsize=20)
-plt.title('Total of Pure Alcohol in Cold Country',  fontsize=24)
-plt.legend()
-
-ax2 = plt.subplot(122)
-ax2.bar(['Libya', 'Saudi Arabia', 'Iraq'], [country['Libya'], country['Saudi Arabia'],
-        country['Iraq']], color='red', alpha=0.5, label='total litres')
-plt.xlabel('Country',  fontsize=20)
-plt.ylabel('Total Alcohol', fontsize=20)
-plt.ylim(0, 12)
-plt.title('Total of Pure Alcohol in Hot Country',  fontsize=24)
+drinks_data = list(drinks_data)
+drinks_data.sort(key=lambda x: float(x[1]))
+drinks_data = np.array(drinks_data)
+country_top = []
+for i in range(-5, 0):
+    country_top.append(drinks_data[i, 0])
+top5 = []
+for j in range(-5, 0):
+    top5.append(float(drinks_data[j, 1]))
+plt.bar(country_top, top5, color='gold', label='beer')
+plt.xlabel("Country", fontsize=20)
+plt.ylabel("Beer Servings [L]", fontsize=20)
+plt.title('Top 5 Countries with High Beer Servings', fontsize=24)
+plt.ylim(0, 400)
 plt.legend()
 plt.show()
 ```
