@@ -7,19 +7,41 @@ The way to play this game is that several people take turns to say the number fr
 ### Code Description & process
 First, write a code to input the last number of 369 game in 'number'. And I print '369 369, 369 369', the first start of the 369 game.
 ``` python
-folder_names = os.listdir('output')
-for folder_name in folder_names:
-    if not os.path.exists('resized/' + folder_name):
-        os.makedirs('resized/' + folder_name)
-    output_folder = folder_name
-    folder_name = 'output/{}'.format(folder_name)
-    file_names = os.listdir(folder_name)
-    for file_name in file_names:
-        output_name = '{}/{}'.format(output_folder, file_name)
-        file_name = '{}/{}'.format(folder_name, file_name)
-        image = cv2.imread(file_name, cv2.IMREAD_COLOR)
-        resized_image = cv2.resize(image, dsize=(256, 256))
-        cv2.imwrite('resized/' + output_name, resized_image)
+def create_datasets(batch_size):
+    train_transform = transforms.Compose([
+    transforms.RandomHorizontalFlip(),
+    transforms.RandomVerticalFlip(),
+    transforms.Resize((128, 128)),
+    transforms.ToTensor(),
+    transforms.Normalize([0.53653824, 0.50120044, 0.47153443], [0.22712645, 0.220764, 0.24157189])  #  정규화(normalization)
+])
+    test_transform = transforms.Compose([
+    transforms.Resize((128, 128)),
+    transforms.ToTensor(), 
+    transforms.Normalize([0.53653824, 0.50120044, 0.47153443], [0.22712645, 0.220764, 0.24157189])
+])
+
+    train_data = datasets.ImageFolder(os.path.join(data_dir, '/content/drive/MyDrive/Colab Notebooks/project2/resized'), train_transform)
+    valid_size = 0.3
+
+    num_train = len(train_data)
+    print(num_train)
+    indices = list(range(num_train))
+    np.random.shuffle(indices)
+    split = int(np.floor(valid_size * num_train))
+    train_idx, valid_idx = indices[split:], indices[:split]
+    train_sampler = SubsetRandomSampler(train_idx)
+    valid_sampler = SubsetRandomSampler(valid_idx)
+
+    train_loader = torch.utils.data.DataLoader(train_data,
+                                               batch_size=batch_size,
+                                               sampler=train_sampler,
+                                               num_workers=1)
+    valid_loader = torch.utils.data.DataLoader(train_data,
+                                               batch_size=batch_size,
+                                               sampler=valid_sampler,
+                                               num_workers=1)
+    return train_data, train_loader, valid_loader
 ```
 Second, create a function, 'claptime', to determine if the factor ' i '  has 3 or 6 or 9 and add 1 to the 'number_count' initialized to 0. 
 If number_count is zero, output the number i, otherwise output the number_count as many 'clap!'
