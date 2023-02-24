@@ -20,10 +20,8 @@ def create_datasets(batch_size):
     transforms.ToTensor(), 
     transforms.Normalize([0.53653824, 0.50120044, 0.47153443], [0.22712645, 0.220764, 0.24157189])
 ])
-
     train_data = datasets.ImageFolder(os.path.join(data_dir, '/content/drive/MyDrive/Colab Notebooks/project2/resized'), train_transform)
     valid_size = 0.3
-
     num_train = len(train_data)
     print(num_train)
     indices = list(range(num_train))
